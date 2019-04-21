@@ -91,7 +91,7 @@ class Parser(object):
 	Two = 0x0001
 	Up = 0x0800
 
-	def parseButtons(self,signal, ButtonState): #signal is 16bit long intl
+	def parseButtons(self, signal, ButtonState): #signal is 16bit long intl
 		ButtonState.A = bool(signal&self.A)
 		ButtonState.B = bool(signal&self.B)
 		ButtonState.Down = bool(signal&self.Down)
@@ -104,7 +104,7 @@ class Parser(object):
 		ButtonState.Two = bool(signal&self.Two)
 		ButtonState.Up = bool(signal&self.Up)
 
-	def parseIR(self,signal,irstate):
+	def parseIR(self, signal, irstate):
 		irstate.RawX1 = signal[0] + ((signal[2] & 0x30) >>4 << 8)
 		irstate.RawY1 = signal[1] + (signal[2] >> 6 << 8)
 		irstate.Size1 = signal[2] & 0x0f
@@ -157,7 +157,7 @@ class Setter(object):
 	LED3 = 0x40
 	LED4 = 0x80
 
-	def SetLEDs(self,ledstate):
+	def SetLEDs(self, ledstate):
 		signal = 0
 		if ledstate.LED1:
 			signal |= self.LED1
@@ -195,9 +195,9 @@ class Wiimote(threading.Thread):
 		self.bd_addr = device[0]
 		self.name = device[1]
 		self.controlsocket = bluetooth.BluetoothSocket(bluetooth.L2CAP)
-		self.controlsocket.connect((self.bd_addr,17))
+		self.controlsocket.connect((self.bd_addr, 17))
 		self.datasocket = bluetooth.BluetoothSocket(bluetooth.L2CAP)
-		self.datasocket.connect((self.bd_addr,19))
+		self.datasocket.connect((self.bd_addr, 19))
 		self.sendsocket = self.controlsocket
 		self.CMD_SET_REPORT = 0x52
 
@@ -231,13 +231,13 @@ class Wiimote(threading.Thread):
 
 		return zerofix + binary
 
-	def SetLEDs(self, led1,led2,led3,led4):
+	def SetLEDs(self, led1, led2, led3, led4):
 		self.WiimoteState.LEDState.LED1 = led1
 		self.WiimoteState.LEDState.LED2 = led2
 		self.WiimoteState.LEDState.LED3 = led3
 		self.WiimoteState.LEDState.LED4 = led4
 
-		self._send_data((0x11,self.setter.SetLEDs(self.WiimoteState.LEDState)))
+		self._send_data((0x11, self.setter.SetLEDs(self.WiimoteState.LEDState)))
 
 
 	def run(self):
@@ -256,7 +256,7 @@ class Wiimote(threading.Thread):
 				self.parser.parseButtons((x[2]<<8) + x[3], self.WiimoteState.ButtonState)
 				self.doButtonCallback()
 			if len(x) >= 19:
-				self.parser.parseIR(x[7:19],self.WiimoteState.IRState)
+				self.parser.parseIR(x[7:19], self.WiimoteState.IRState)
 				self.doIRCallback()
 
 		self.datasocket.close()
@@ -275,7 +275,7 @@ class Wiimote(threading.Thread):
 	def join(self):#will be called last...
 		self.Dispose()
 
-	def _send_data(self,data):
+	def _send_data(self, data):
 		bin_data = bytearray()
 		bin_data.append(self.CMD_SET_REPORT)
 		for each in data:
@@ -291,9 +291,9 @@ class Wiimote(threading.Thread):
 
 	def SetRumble(self, on=True):
 		if on:
-			self._send_data((0x11,0x01))
+			self._send_data((0x11, 0x01))
 		else:
-			self._send_data((0x11,0x00))
+			self._send_data((0x11, 0x00))
 
 	def activate_IR(self, sens=6):
 		self._send_data(i2bs(0x120033)) #mode IR
@@ -306,40 +306,40 @@ class Wiimote(threading.Thread):
 		if n < 1 or n > 6:
 			return
 
-		self._write_to_mem(0x04b00030,0x08)
+		self._write_to_mem(0x04b00030, 0x08)
 		time.sleep(0.1)
 
 		if n == 1:
-			self._write_to_mem(0x04b00000,0x0200007101006400fe)
+			self._write_to_mem(0x04b00000, 0x0200007101006400fe)
 			time.sleep(0.1)
-			self._write_to_mem(0x04b0001a,0xfd05)
+			self._write_to_mem(0x04b0001a, 0xfd05)
 		elif n == 2:
-			self._write_to_mem(0x04b00000,0x0200007101009600b4)
+			self._write_to_mem(0x04b00000, 0x0200007101009600b4)
 			time.sleep(0.1)
-			self._write_to_mem(0x04b0001a,0xb304)
+			self._write_to_mem(0x04b0001a, 0xb304)
 		elif n == 3:
-			self._write_to_mem(0x04b00000,0x020000710100aa0064)
+			self._write_to_mem(0x04b00000, 0x020000710100aa0064)
 			time.sleep(0.1)
-			self._write_to_mem(0x04b0001a,0x6303)
+			self._write_to_mem(0x04b0001a, 0x6303)
 		elif n == 4:
-			self._write_to_mem(0x04b00000,0x020000710100c80036)
+			self._write_to_mem(0x04b00000, 0x020000710100c80036)
 			time.sleep(0.1)
-			self._write_to_mem(0x04b0001a,0x3503)
+			self._write_to_mem(0x04b0001a, 0x3503)
 		elif n == 5:
-			self._write_to_mem(0x04b00000,0x070000710100720020)
+			self._write_to_mem(0x04b00000, 0x070000710100720020)
 			time.sleep(0.1)
-			self._write_to_mem(0x04b0001a,0x1f03)
+			self._write_to_mem(0x04b0001a, 0x1f03)
 		# MAX
 		elif n == 6:
-			self._write_to_mem(0x04b00000,0x000000000000900041)
+			self._write_to_mem(0x04b00000, 0x000000000000900041)
 			time.sleep(0.1)
-			self._write_to_mem(0x04b0001a,0x4000)
+			self._write_to_mem(0x04b0001a, 0x4000)
 
 		time.sleep(0.1)
-		self._write_to_mem(0x04b00033,0x33)
+		self._write_to_mem(0x04b00033, 0x33)
 
 	def _get_battery_status(self):
-		self._send_data((0x15,0x00))
+		self._send_data((0x15, 0x00))
 		self.running2 = True
 		while self.running2:
 			try:

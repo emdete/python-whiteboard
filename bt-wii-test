@@ -11,16 +11,16 @@ wiimote = None
 
 def button_callback(oldState, newState):
 	print(newState.difference(oldState))
-	new_state = ['A' in newState, 'B' in newState, 'One' in newState, 'Two' in newState, ]
+	new = ['A' in newState, 'B' in newState, 'One' in newState, 'Two' in newState, ]
 	global led_state
-	if new_state != led_state:
-		led_state = new_state
+	if new != led_state:
+		led_state = new
 		global wiimote
 		wiimote.SetLEDs(*led_state)
-	new_state = 'Home' in newState
+	new = 'Home' in newState
 	global rumble_state
-	if new_state != rumble_state:
-		rumble_state = new_state
+	if new != rumble_state:
+		rumble_state = new
 		wiimote.SetRumble(rumble_state)
 
 def ir_callback(px, py):
@@ -43,7 +43,7 @@ def main():
 					wiimote.SetRumble(False)
 					wiimote.setButtonCallBack(button_callback)
 					wiimote.setIRCallBack(ir_callback)
-					wiimote.activate_IR(1)
+					wiimote.activate_IR(6)
 					global led_state
 					wiimote.SetLEDs(*led_state)
 					print('battery={}'.format(wiimote.WiimoteState.Battery))
@@ -60,30 +60,6 @@ def main():
 						print('bluetooth is off!')
 	try:
 		while wiimote.running:
-			if 0:
-				print(
-					'A' if wiimote.WiimoteState.ButtonState.A else '',
-					'B' if wiimote.WiimoteState.ButtonState.B else '',
-					'Up' if wiimote.WiimoteState.ButtonState.Up else '',
-					'Down' if wiimote.WiimoteState.ButtonState.Down else '',
-					'Left' if wiimote.WiimoteState.ButtonState.Left else '',
-					'Right' if wiimote.WiimoteState.ButtonState.Right else '',
-					'Minus' if wiimote.WiimoteState.ButtonState.Minus else '',
-					'Plus' if wiimote.WiimoteState.ButtonState.Plus else '',
-					'Home' if wiimote.WiimoteState.ButtonState.Home else '',
-					'One' if wiimote.WiimoteState.ButtonState.One else '',
-					'Two' if wiimote.WiimoteState.ButtonState.Two else '',
-					('Found1',
-					wiimote.WiimoteState.IRState.RawX1,
-					wiimote.WiimoteState.IRState.RawY1,
-					wiimote.WiimoteState.IRState.Size1, )
-					if wiimote.WiimoteState.IRState.Found1 else '',
-					('Found2',
-					wiimote.WiimoteState.IRState.RawX2,
-					wiimote.WiimoteState.IRState.RawY2,
-					wiimote.WiimoteState.IRState.Size2, )
-					if wiimote.WiimoteState.IRState.Found2 else '',
-					)
 			sleep(1)
 	finally:
 		wiimote.Disconnect()
