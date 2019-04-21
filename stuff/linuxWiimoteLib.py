@@ -33,7 +33,7 @@ import threading
 import time
 import bluetooth
 
-def log(*a):
+def log(*l, **m):
 	pass
 
 def i2bs(val):
@@ -189,6 +189,7 @@ class Wiimote(threading.Thread):
 		self.setter = Setter()
 		self.IRCallback = None
 		self.buttonCallback = None
+		self.buttonState = set()
 
 	def Connect(self, device):
 		self.bd_addr = device[0]
@@ -214,18 +215,18 @@ class Wiimote(threading.Thread):
 		self.start() #start this thread
 		return True
 
-	def char_to_binary_string(self,ascii):
-		bin = []
+	def char_to_binary_string(self, _ascii):
+		_bin = []
 
-		while (ascii > 0):
-			if (ascii & 1) == 1:
-				bin.append("1")
+		while (_ascii > 0):
+			if (_ascii & 1) == 1:
+				_bin.append("1")
 			else:
-				bin.append("0")
-			ascii = ascii >> 1
+				_bin.append("0")
+			_ascii = _ascii >> 1
 
-		bin.reverse()
-		binary = "".join(bin)
+		_bin.reverse()
+		binary = "".join(_bin)
 		zerofix = (8 - len(binary)) * '0'
 
 		return zerofix + binary
@@ -245,8 +246,8 @@ class Wiimote(threading.Thread):
 		while self.running:
 			try:
 				x = bytearray(self.datasocket.recv(32))
-				log('.', end='')
 			except bluetooth.BluetoothError:
+				log('error recv')
 				continue
 			#self.state = ""
 			#for each in x[:17]:
@@ -288,7 +289,7 @@ class Wiimote(threading.Thread):
 		msg = [0x16] + i2bs(address) + [val_len] +val
 		self._send_data(msg)
 
-	def SetRumble(self,on):
+	def SetRumble(self, on=True):
 		if on:
 			self._send_data((0x11,0x01))
 		else:
@@ -357,7 +358,37 @@ class Wiimote(threading.Thread):
 	def doButtonCallback(self):
 		if not self.buttonCallback:
 			return
-		self.buttonCallback(self.WiimoteState.ButtonState)
+		new_state = set()
+		button = self.WiimoteState.ButtonState
+		if button.A:
+			new_state.add('A')
+		if button.B:
+			new_state.add('B')
+		if button.Up:
+			new_state.add('Up')
+		if button.Down:
+			new_state.add('Down')
+		if button.Left:
+			new_state.add('Left')
+		if button.Right:
+			new_state.add('Right')
+		if button.Minus:
+			new_state.add('Minus')
+		if button.Plus:
+			new_state.add('Plus')
+		if button.Home:
+			new_state.add('Home')
+		if button.One:
+			new_state.add('One')
+		if button.Two:
+			new_state.add('Two')
+		global button_state
+		if new_state != self.buttonState:
+			try:
+				self.buttonCallback(self.buttonState, new_state)
+			except:
+				log('error on callback')
+			self.buttonState = new_state
 
 	def setIRCallBack(self, func):
 		self.IRCallback = func
@@ -367,14 +398,17 @@ class Wiimote(threading.Thread):
 			return
 		irstate = self.WiimoteState.IRState
 
-		if irstate.Found1:
-			self.IRCallback(irstate.RawX1, irstate.RawY1)
-		elif irstate.Found2:
-			self.IRCallback(irstate.RawX2, irstate.RawY2)
-		elif irstate.Found3:
-			self.IRCallback(irstate.RawX3, irstate.RawY3)
-		elif irstate.Found4:
-			self.IRCallback(irstate.RawX4, irstate.RawY4)
+		try:
+			if irstate.Found1:
+				self.IRCallback(irstate.RawX1, irstate.RawY1)
+			elif irstate.Found2:
+				self.IRCallback(irstate.RawX2, irstate.RawY2)
+			elif irstate.Found3:
+				self.IRCallback(irstate.RawX3, irstate.RawY3)
+			elif irstate.Found4:
+				self.IRCallback(irstate.RawX4, irstate.RawY4)
+		except:
+			log('error on callback')
 
 
 if __name__ == "__main__":
