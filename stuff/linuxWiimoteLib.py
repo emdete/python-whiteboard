@@ -166,10 +166,10 @@ class Setter(object):
 
 	def SetLEDs(self,ledstate):
 		signal = 0
-		if ledstate.LED1: signal += self.LED1
-		if ledstate.LED2: signal += self.LED2
-		if ledstate.LED3: signal += self.LED3
-		if ledstate.LED4: signal += self.LED4
+		if ledstate.LED1: signal |= self.LED1
+		if ledstate.LED2: signal |= self.LED2
+		if ledstate.LED3: signal |= self.LED3
+		if ledstate.LED4: signal |= self.LED4
 		return signal
 
 
@@ -180,7 +180,7 @@ class InputReport(object):
 	ButtonsExtension = 6
 
 class Wiimote(threading.Thread):
-	state = None
+	#state = None
 	running = False
 	WiimoteState = WiimoteState
 	InputReport = InputReport
@@ -249,9 +249,9 @@ class Wiimote(threading.Thread):
 				x= bytearray(self.datasocket.recv(32))
 			except bluetooth.BluetoothError:
 				continue
-			self.state = ""
-			for each in x[:17]:
-				self.state += self.char_to_binary_string(each) + " "
+			#self.state = ""
+			#for each in x[:17]:
+				#self.state += self.char_to_binary_string(each) + " "
 			if len(x) >= 4:
 				self.parser.parseButtons((x[2]<<8) + x[3], self.WiimoteState.ButtonState)
 			if len(x) >= 19:
@@ -343,7 +343,7 @@ class Wiimote(threading.Thread):
 				x = bytearray(self.datasocket.recv(32))
 			except bluetooth.BluetoothError:
 				continue
-			self.state = ""
+			#self.state = ""
 			if len(x) >= 7:
 				self.running2 = False
 				battery_level = float(x[7])
