@@ -1,5 +1,8 @@
 all: languages
 
+run:
+	PYTHONPATH=stuff python3 -u ./bt-wii-test
+
 languages:
 	lrelease trans/*.ts
 
