@@ -33,6 +33,9 @@ import threading
 import time
 import bluetooth
 
+def log(*a):
+	pass
+
 def i2bs(val):
 	lst = []
 	while val:
@@ -58,26 +61,10 @@ class WiimoteState(object):
 		Up = False
 
 	class IRState(object):
-		RawX1 = 0
-		RawX2 = 0
-		RawX3 = 0
-		RawX4 = 0
-
-		RawY1 = 0
-		RawY2 = 0
-		RawY3 = 0
-		RawY4 = 0
-
-		Found1 = 0
-		Found2 = 0
-		Found3 = 0
-		Found4 = 0
-
-		Size1 = 0
-		Size2 = 0
-		Size3 = 0
-		Size4 = 0
-
+		RawX1 = RawX2 = RawX3 = RawX4 = 0
+		RawY1 = RawY2 = RawY3 = RawY4 = 0
+		Found1 = Found2 = Found3 = Found4 = 0
+		Size1 = Size2 = Size3 = Size4 = 0
 		X1 = X2 = X3 = X4 = 0.0
 		Y1 = Y2 = Y3 = Y4 = 0.0
 
@@ -88,10 +75,7 @@ class WiimoteState(object):
 		RawMidY = 0
 
 	class LEDState(object):
-		LED1 = False
-		LED2 = False
-		LED3 = False
-		LED4 = False
+		LED1 = LED2 = LED3 = LED4 = False
 
 class Parser(object):
 	""" Sets the values contained in a signal """
@@ -124,26 +108,34 @@ class Parser(object):
 		irstate.RawX1 = signal[0] + ((signal[2] & 0x30) >>4 << 8)
 		irstate.RawY1 = signal[1] + (signal[2] >> 6 << 8)
 		irstate.Size1 = signal[2] & 0x0f
-		if irstate.RawY1 == 1023: irstate.Found1 = False
-		else: irstate.Found1 = True
+		if irstate.RawY1 == 1023:
+			irstate.Found1 = False
+		else:
+			irstate.Found1 = True
 
 		irstate.RawX2 = signal[3] + ((signal[5] & 0x30) >>4 << 8)
 		irstate.RawY2 = signal[4] + (signal[5] >> 6 << 8)
 		irstate.Size2 = signal[5] & 0x0f
-		if irstate.RawY2 == 1023: irstate.Found2 = False
-		else: irstate.Found2 = True
+		if irstate.RawY2 == 1023:
+			irstate.Found2 = False
+		else:
+			irstate.Found2 = True
 
 		irstate.RawX3 = signal[6] + ((signal[8] & 0x30) >>4 << 8)
 		irstate.RawY3 = signal[7] + (signal[8] >> 6 << 8)
 		irstate.Size3 = signal[8] & 0x0f
-		if irstate.RawY3 == 1023: irstate.Found3 = False
-		else: irstate.Found3 = True
+		if irstate.RawY3 == 1023:
+			irstate.Found3 = False
+		else:
+			irstate.Found3 = True
 
 		irstate.RawX4 = signal[9] + ((signal[11] & 0x30) >>4 << 8)
 		irstate.RawY4 = signal[10] + (signal[11] >> 6 << 8)
 		irstate.Size4 = signal[11] & 0x0f
-		if irstate.RawY4 == 1023: irstate.Found4 = False
-		else: irstate.Found4 = True
+		if irstate.RawY4 == 1023:
+			irstate.Found4 = False
+		else:
+			irstate.Found4 = True
 
 		if irstate.Found1:
 			if irstate.Found2:
@@ -154,7 +146,8 @@ class Parser(object):
 				irstate.RawMidY = irstate.RawY1
 			irstate.MidX = old_div(float(irstate.RawMidX), 1024)
 			irstate.MidY = old_div(float(irstate.RawMidY), 768)
-		else: irstate.MidX = irstate.MidY = 0
+		else:
+			irstate.MidX = irstate.MidY = 0
 
 
 class Setter(object):
@@ -166,10 +159,14 @@ class Setter(object):
 
 	def SetLEDs(self,ledstate):
 		signal = 0
-		if ledstate.LED1: signal |= self.LED1
-		if ledstate.LED2: signal |= self.LED2
-		if ledstate.LED3: signal |= self.LED3
-		if ledstate.LED4: signal |= self.LED4
+		if ledstate.LED1:
+			signal |= self.LED1
+		if ledstate.LED2:
+			signal |= self.LED2
+		if ledstate.LED3:
+			signal |= self.LED3
+		if ledstate.LED4:
+			signal |= self.LED4
 		return signal
 
 
@@ -191,6 +188,7 @@ class Wiimote(threading.Thread):
 		self.parser = Parser()
 		self.setter = Setter()
 		self.IRCallback = None
+		self.buttonCallback = None
 
 	def Connect(self, device):
 		self.bd_addr = device[0]
@@ -209,9 +207,9 @@ class Wiimote(threading.Thread):
 		try:
 			self.datasocket.settimeout(1)
 		except NotImplementedError:
-			print("socket timeout not implemented with this bluetooth module")
+			log("socket timeout not implemented with this bluetooth module")
 
-		print("Connected to ", self.bd_addr)
+		log("Connected to ", self.bd_addr)
 		self._get_battery_status()
 		self.start() #start this thread
 		return True
@@ -242,11 +240,12 @@ class Wiimote(threading.Thread):
 
 
 	def run(self):
-		print("starting")
+		log("starting")
 		self.running = True
 		while self.running:
 			try:
-				x= bytearray(self.datasocket.recv(32))
+				x = bytearray(self.datasocket.recv(32))
+				log('.', end='')
 			except bluetooth.BluetoothError:
 				continue
 			#self.state = ""
@@ -254,15 +253,16 @@ class Wiimote(threading.Thread):
 				#self.state += self.char_to_binary_string(each) + " "
 			if len(x) >= 4:
 				self.parser.parseButtons((x[2]<<8) + x[3], self.WiimoteState.ButtonState)
+				self.doButtonCallback()
 			if len(x) >= 19:
 				self.parser.parseIR(x[7:19],self.WiimoteState.IRState)
 				self.doIRCallback()
 
 		self.datasocket.close()
 		self.controlsocket.close()
-		print("Bluetooth socket closed succesfully.")
+		log("Bluetooth socket closed succesfully.")
 		self.Dispose()
-		print("stopping")
+		log("stopping")
 
 	def Dispose(self):
 		self.Disconnect()
@@ -289,8 +289,10 @@ class Wiimote(threading.Thread):
 		self._send_data(msg)
 
 	def SetRumble(self,on):
-		if on: self._send_data((0x11,0x01))
-		else: self._send_data((0x11,0x00))
+		if on:
+			self._send_data((0x11,0x01))
+		else:
+			self._send_data((0x11,0x00))
 
 	def activate_IR(self, sens=6):
 		self._send_data(i2bs(0x120033)) #mode IR
@@ -349,12 +351,20 @@ class Wiimote(threading.Thread):
 				battery_level = float(x[7])
 		self.WiimoteState.Battery = battery_level / 208.
 
+	def setButtonCallBack(self, func):
+		self.buttonCallback = func
+
+	def doButtonCallback(self):
+		if not self.buttonCallback:
+			return
+		self.buttonCallback(self.WiimoteState.ButtonState)
 
 	def setIRCallBack(self, func):
 		self.IRCallback = func
 
 	def doIRCallback(self):
-		if self.IRCallback == None: return
+		if self.IRCallback == None:
+			return
 		irstate = self.WiimoteState.IRState
 
 		if irstate.Found1:
@@ -369,13 +379,13 @@ class Wiimote(threading.Thread):
 
 if __name__ == "__main__":
 	wiimote = Wiimote()
-	print("Press 1 and 2 on wiimote (or SYNC on wiimote plus) to make it discoverable")
+	log("Press 1 and 2 on wiimote (or SYNC on wiimote plus) to make it discoverable")
 	wiimote.Connect()
 	wiimote.activate_IR()
 	while 1:
 		time.sleep(0.1)
-		#print wiimote.state
-		print(wiimote.WiimoteState.ButtonState.A, wiimote.WiimoteState.ButtonState.B, wiimote.WiimoteState.ButtonState.Up, wiimote.WiimoteState.ButtonState.Down, wiimote.WiimoteState.ButtonState.Left, wiimote.WiimoteState.ButtonState.Right, wiimote.WiimoteState.ButtonState.Minus, wiimote.WiimoteState.ButtonState.Plus, wiimote.WiimoteState.ButtonState.Home, wiimote.WiimoteState.ButtonState.One, wiimote.WiimoteState.ButtonState.Two, wiimote.WiimoteState.IRState.RawX1, wiimote.WiimoteState.IRState.RawY1, wiimote.WiimoteState.IRState.Size1, wiimote.WiimoteState.IRState.RawX2, wiimote.WiimoteState.IRState.RawY2, wiimote.WiimoteState.IRState.Size2)
-		#print wiimote.IRState.Found1
+		#log wiimote.state
+		log(wiimote.WiimoteState.ButtonState.A, wiimote.WiimoteState.ButtonState.B, wiimote.WiimoteState.ButtonState.Up, wiimote.WiimoteState.ButtonState.Down, wiimote.WiimoteState.ButtonState.Left, wiimote.WiimoteState.ButtonState.Right, wiimote.WiimoteState.ButtonState.Minus, wiimote.WiimoteState.ButtonState.Plus, wiimote.WiimoteState.ButtonState.Home, wiimote.WiimoteState.ButtonState.One, wiimote.WiimoteState.ButtonState.Two, wiimote.WiimoteState.IRState.RawX1, wiimote.WiimoteState.IRState.RawY1, wiimote.WiimoteState.IRState.Size1, wiimote.WiimoteState.IRState.RawX2, wiimote.WiimoteState.IRState.RawY2, wiimote.WiimoteState.IRState.Size2)
+		#log wiimote.IRState.Found1
 
 

@@ -5,11 +5,14 @@ from os import listdir
 from bluetooth import discover_devices
 from linuxWiimoteLib import Wiimote
 
-def wiimote_callback(px, py):
+def button_callback(button):
+	print(button)
+
+def ir_callback(px, py):
 	print(px, py)
 
 def main():
-	print('press 1+2 / backbutton to make discoverable')
+	print('press 1+2 / button to make discoverable')
 	wiimote = Wiimote()
 	while not wiimote.running:
 		try:
@@ -22,9 +25,11 @@ def main():
 					wiimote.SetRumble(True)
 					sleep(.2)
 					wiimote.SetRumble(False)
-					wiimote.setIRCallBack(wiimote_callback)
-					wiimote.activate_IR(6)
+					wiimote.setButtonCallBack(button_callback)
+					wiimote.setIRCallBack(ir_callback)
+					wiimote.activate_IR(1)
 					wiimote.SetLEDs(False, True, False, False)
+					print('battery={}'.format(wiimote.WiimoteState.Battery))
 					break
 		except OSError as e:
 			print('bluetooth off?', e)
@@ -38,29 +43,30 @@ def main():
 						print('bluetooth is off!')
 	try:
 		while True:
-			print(
-				'A' if wiimote.WiimoteState.ButtonState.A else '',
-				'B' if wiimote.WiimoteState.ButtonState.B else '',
-				'Up' if wiimote.WiimoteState.ButtonState.Up else '',
-				'Down' if wiimote.WiimoteState.ButtonState.Down else '',
-				'Left' if wiimote.WiimoteState.ButtonState.Left else '',
-				'Right' if wiimote.WiimoteState.ButtonState.Right else '',
-				'Minus' if wiimote.WiimoteState.ButtonState.Minus else '',
-				'Plus' if wiimote.WiimoteState.ButtonState.Plus else '',
-				'Home' if wiimote.WiimoteState.ButtonState.Home else '',
-				'One' if wiimote.WiimoteState.ButtonState.One else '',
-				'Two' if wiimote.WiimoteState.ButtonState.Two else '',
-				('Found1',
-				wiimote.WiimoteState.IRState.RawX1,
-				wiimote.WiimoteState.IRState.RawY1,
-				wiimote.WiimoteState.IRState.Size1, )
-				if wiimote.WiimoteState.IRState.Found1 else '',
-				('Found2',
-				wiimote.WiimoteState.IRState.RawX2,
-				wiimote.WiimoteState.IRState.RawY2,
-				wiimote.WiimoteState.IRState.Size2, )
-				if wiimote.WiimoteState.IRState.Found2 else '',
-				)
+			if 0:
+				print(
+					'A' if wiimote.WiimoteState.ButtonState.A else '',
+					'B' if wiimote.WiimoteState.ButtonState.B else '',
+					'Up' if wiimote.WiimoteState.ButtonState.Up else '',
+					'Down' if wiimote.WiimoteState.ButtonState.Down else '',
+					'Left' if wiimote.WiimoteState.ButtonState.Left else '',
+					'Right' if wiimote.WiimoteState.ButtonState.Right else '',
+					'Minus' if wiimote.WiimoteState.ButtonState.Minus else '',
+					'Plus' if wiimote.WiimoteState.ButtonState.Plus else '',
+					'Home' if wiimote.WiimoteState.ButtonState.Home else '',
+					'One' if wiimote.WiimoteState.ButtonState.One else '',
+					'Two' if wiimote.WiimoteState.ButtonState.Two else '',
+					('Found1',
+					wiimote.WiimoteState.IRState.RawX1,
+					wiimote.WiimoteState.IRState.RawY1,
+					wiimote.WiimoteState.IRState.Size1, )
+					if wiimote.WiimoteState.IRState.Found1 else '',
+					('Found2',
+					wiimote.WiimoteState.IRState.RawX2,
+					wiimote.WiimoteState.IRState.RawY2,
+					wiimote.WiimoteState.IRState.Size2, )
+					if wiimote.WiimoteState.IRState.Found2 else '',
+					)
 			sleep(1)
 	finally:
 		wiimote.Disconnect()
