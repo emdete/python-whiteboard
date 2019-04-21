@@ -3,7 +3,7 @@
 <context>
     <name>CalibrateDialog</name>
     <message>
-        <location filename="calibration.py" line="296"/>
+        <location filename="../stuff/calibration.py" line="307"/>
         <source>Push UP/DOWN to alter the crosses&apos; position</source>
         <translation>Pulsa los botones ARRIBA/ABAJO del cursor para mover las marcas</translation>
     </message>
@@ -11,22 +11,22 @@
 <context>
     <name>CalibrateDialog2</name>
     <message>
-        <location filename="calibration.py" line="145"/>
+        <location filename="../stuff/calibration.py" line="151"/>
         <source>TOP-LEFT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calibration.py" line="146"/>
+        <location filename="../stuff/calibration.py" line="152"/>
         <source>TOP-RIGHT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calibration.py" line="147"/>
+        <location filename="../stuff/calibration.py" line="153"/>
         <source>BOTTOM-RIGHT</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="calibration.py" line="148"/>
+        <location filename="../stuff/calibration.py" line="154"/>
         <source>BOTTOM-LEFT</source>
         <translation type="unfinished"></translation>
     </message>
@@ -34,32 +34,32 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="configuration.py" line="295"/>
+        <location filename="../stuff/configuration.py" line="289"/>
         <source>Smoothing: </source>
         <translation>Suavizado:</translation>
     </message>
     <message>
-        <location filename="configuration.py" line="301"/>
+        <location filename="../stuff/configuration.py" line="295"/>
         <source>IR Sensitivity: </source>
         <translation>Sensibilidad IR:</translation>
     </message>
     <message>
-        <location filename="configuration.py" line="243"/>
+        <location filename="../stuff/configuration.py" line="237"/>
         <source>All devices</source>
         <translation>Todos los dispositivos</translation>
     </message>
     <message>
-        <location filename="configuration.py" line="270"/>
+        <location filename="../stuff/configuration.py" line="264"/>
         <source>Comment</source>
         <translation>Comentario</translation>
     </message>
     <message>
-        <location filename="configuration.py" line="270"/>
+        <location filename="../stuff/configuration.py" line="264"/>
         <source>Wii device description</source>
         <translation>Descripción del dispositivo</translation>
     </message>
     <message>
-        <location filename="configuration.py" line="220"/>
+        <location filename="../stuff/configuration.py" line="215"/>
         <source>Address</source>
         <translation>MAC</translation>
     </message>
@@ -67,112 +67,112 @@
 <context>
     <name>Dialog</name>
     <message>
-        <location filename="calibration2.ui" line="32"/>
+        <location filename="../stuff/calibration2.ui" line="32"/>
         <source>Dialog</source>
         <translation>Dialogo</translation>
     </message>
     <message>
-        <location filename="calibration2.ui" line="73"/>
+        <location filename="../stuff/calibration2.ui" line="73"/>
         <source>Cancel calibration</source>
         <translation>Cancela la calibración</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="14"/>
+        <location filename="../stuff/configuration.ui" line="14"/>
         <source>Configuration</source>
         <translation>Configuración</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="186"/>
+        <location filename="../stuff/configuration.ui" line="186"/>
         <source>General options</source>
         <translation>Opciones generales</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="196"/>
+        <location filename="../stuff/configuration.ui" line="196"/>
         <source>Auto connect</source>
         <translation>Auto conectar</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="264"/>
+        <location filename="../stuff/configuration.ui" line="264"/>
         <source>Fullscreen Calibration</source>
         <translation>Calibración a pantalla completa</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="210"/>
+        <location filename="../stuff/configuration.ui" line="210"/>
         <source>Select allowed devices:</source>
         <translation>Selecciona dispositivos autorizados:</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="224"/>
+        <location filename="../stuff/configuration.ui" line="224"/>
         <source>Add connected device</source>
         <translation>Añade dispositivo conectado</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="244"/>
+        <location filename="../stuff/configuration.ui" line="244"/>
         <source>Remove device</source>
         <translation>Elimina dispositivo</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="271"/>
+        <location filename="../stuff/configuration.ui" line="271"/>
         <source>Do calibration after connection</source>
         <translation>Calibra después de conectar</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="310"/>
+        <location filename="../stuff/configuration.ui" line="310"/>
         <source>IR Sensitivity:</source>
         <translation>Sensibilidad IR:</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="36"/>
+        <location filename="../stuff/configuration.ui" line="36"/>
         <source>Toggles</source>
         <translation>Conmutadores</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="53"/>
+        <location filename="../stuff/configuration.ui" line="53"/>
         <source>Area 1</source>
         <translation>Area 1</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="60"/>
+        <location filename="../stuff/configuration.ui" line="60"/>
         <source>Area 2</source>
         <translation>Area 2</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="67"/>
+        <location filename="../stuff/configuration.ui" line="67"/>
         <source>Area 3</source>
         <translation>Area 3</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="74"/>
+        <location filename="../stuff/configuration.ui" line="74"/>
         <source>Area 4</source>
         <translation>Area 4</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="158"/>
+        <location filename="../stuff/configuration.ui" line="158"/>
         <source>Left Click</source>
         <translation>Click Izquierdo</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="163"/>
+        <location filename="../stuff/configuration.ui" line="163"/>
         <source>Only Move</source>
         <translation>Solo movimiento</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="168"/>
+        <location filename="../stuff/configuration.ui" line="168"/>
         <source>Right Click</source>
         <translation>Click derecho</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="173"/>
+        <location filename="../stuff/configuration.ui" line="173"/>
         <source>Middle Click</source>
         <translation>Click botón del medio</translation>
     </message>
     <message>
-        <location filename="pbar.ui" line="32"/>
+        <location filename="../stuff/pbar.ui" line="32"/>
         <source>Progress...</source>
         <translation>Progreso...</translation>
     </message>
     <message>
-        <location filename="pbar.ui" line="40"/>
+        <location filename="../stuff/pbar.ui" line="40"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -185,12 +185,12 @@ p, li { white-space: pre-wrap; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Pulsa los botones 1 y 2 del Wiimote&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="256"/>
+        <location filename="../stuff/configuration.ui" line="256"/>
         <source>Advanced</source>
         <translation>Avanzado</translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="289"/>
+        <location filename="../stuff/configuration.ui" line="289"/>
         <source>Smoothing:</source>
         <translation>Suavizado:</translation>
     </message>
@@ -205,47 +205,47 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Elimina</translation>
     </message>
     <message>
-        <location filename="pbar.ui" line="94"/>
+        <location filename="../stuff/pbar.ui" line="94"/>
         <source>Cancel</source>
         <translation>Cancelar</translation>
     </message>
     <message>
-        <location filename="about.ui" line="26"/>
+        <location filename="../stuff/about.ui" line="26"/>
         <source>About python-whiteboard</source>
         <translation>Acerca de python-whiteboard</translation>
     </message>
     <message>
-        <location filename="about.ui" line="36"/>
+        <location filename="../stuff/about.ui" line="36"/>
         <source>Information</source>
         <translation>Información</translation>
     </message>
     <message>
-        <location filename="about.ui" line="65"/>
+        <location filename="../stuff/about.ui" line="65"/>
         <source>Translations</source>
         <translation>Traducciones</translation>
     </message>
     <message>
-        <location filename="about.ui" line="95"/>
+        <location filename="../stuff/about.ui" line="96"/>
         <source>License</source>
         <translation>Licencia</translation>
     </message>
     <message>
-        <location filename="about.ui" line="183"/>
+        <location filename="../stuff/about.ui" line="184"/>
         <source>Ok</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="278"/>
+        <location filename="../stuff/configuration.ui" line="278"/>
         <source>Use calibration matrix from settings if available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="pbar.ui" line="68"/>
+        <location filename="../stuff/pbar.ui" line="68"/>
         <source>Choose</source>
         <translation type="unfinished"></translation>
     </message>
     <message encoding="UTF-8">
-        <location filename="about.ui" line="42"/>
+        <location filename="../stuff/about.ui" line="42"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -265,28 +265,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="about.ui" line="71"/>
-        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;Catalan Translation:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Pau Cabot&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Pere Negre&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;Italian Translation:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Pietro Pilolli&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;Spanish Translation:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Pere Negre&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;Chinese Translation:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Kentxchang Chang&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;French Translation:&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Georges Khaznadar&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="about.ui" line="104"/>
+        <location filename="../stuff/about.ui" line="105"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -344,95 +323,117 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="configuration.ui" line="203"/>
+        <location filename="../stuff/configuration.ui" line="203"/>
         <source>Don&apos;t wait for devices. Pick the first one</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stuff/about.ui" line="71"/>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;Catalan Translation:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Pau Cabot&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Pere Negre&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;Italian Translation:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Pietro Pilolli&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Sergio Zanchetta&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;Spanish Translation:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Pere Negre&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;Chinese Translation:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Kentxchang Chang&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt; font-weight:600;&quot;&gt;French Translation:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;* Georges Khaznadar&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Sans&apos;; font-size:10pt;&quot;&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="mainwindow.ui" line="32"/>
+        <location filename="../stuff/mainwindow.ui" line="32"/>
         <source>MainWindow</source>
         <translation>Ventana principal</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="350"/>
+        <location filename="../stuff/pywhiteboard.py" line="335"/>
         <source>Connect</source>
         <translation>Conectar</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="548"/>
+        <location filename="../stuff/pywhiteboard.py" line="535"/>
         <source>Activate</source>
         <translation>Activar</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="69"/>
+        <location filename="../stuff/mainwindow.ui" line="69"/>
         <source>Calibrate</source>
         <translation>Calibrar</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="119"/>
+        <location filename="../stuff/mainwindow.ui" line="119"/>
         <source>Wiimote Battery level:</source>
         <translation>Nivel de la bateria:</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="460"/>
+        <location filename="../stuff/pywhiteboard.py" line="445"/>
         <source>Utilization: 0%</source>
         <translation>Utilización: 0%</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="167"/>
+        <location filename="../stuff/mainwindow.ui" line="167"/>
         <source>Load Calibration</source>
         <translation>Carga calibración</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="258"/>
+        <location filename="../stuff/mainwindow.ui" line="258"/>
         <source>File</source>
         <translation>Fichero</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="288"/>
+        <location filename="../stuff/mainwindow.ui" line="288"/>
         <source>Help</source>
         <translation>Ayuda</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="278"/>
+        <location filename="../stuff/mainwindow.ui" line="278"/>
         <source>Exit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="283"/>
+        <location filename="../stuff/mainwindow.ui" line="283"/>
         <source>Quit</source>
         <translation>Salir</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="293"/>
+        <location filename="../stuff/mainwindow.ui" line="293"/>
         <source>Configuration</source>
         <translation>Configuración</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="313"/>
+        <location filename="../stuff/pywhiteboard.py" line="298"/>
         <source>Connected to </source>
         <translation>Conectado a </translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="409"/>
+        <location filename="../stuff/pywhiteboard.py" line="394"/>
         <source>Disconnect</source>
         <translation>Desconectar</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="480"/>
+        <location filename="../stuff/pywhiteboard.py" line="465"/>
         <source>Utilization: </source>
         <translation>Utilización:</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="494"/>
+        <location filename="../stuff/pywhiteboard.py" line="481"/>
         <source>Error during Calibration</source>
         <translation>Error en la calibración</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="571"/>
+        <location filename="../stuff/pywhiteboard.py" line="558"/>
         <source>Deactivate</source>
         <translation>Desactivar</translation>
     </message>
@@ -447,32 +448,32 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Para salir: Fichero -&gt; Salir</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="103"/>
+        <location filename="../stuff/mainwindow.ui" line="103"/>
         <source>Profile:</source>
         <translation>Perfil:</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="111"/>
+        <location filename="../stuff/mainwindow.ui" line="111"/>
         <source>Default</source>
         <translation>Por defecto</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="260"/>
+        <location filename="../stuff/pywhiteboard.py" line="245"/>
         <source>Wii device disconnected</source>
         <translation>Dispositivo wiimote desconectado</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="189"/>
+        <location filename="../stuff/mainwindow.ui" line="189"/>
         <source>Mouse Control</source>
         <translation>Control del ratón</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="206"/>
+        <location filename="../stuff/mainwindow.ui" line="206"/>
         <source>Move Only</source>
         <translation>Mover solamente</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="434"/>
+        <location filename="../stuff/pywhiteboard.py" line="419"/>
         <source>Error. Check your bluetooth driver</source>
         <translation>Error. Comprueba la conexión bluetooth</translation>
     </message>
@@ -482,82 +483,82 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Muestra / esconde configuración</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="433"/>
+        <location filename="../stuff/pywhiteboard.py" line="418"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="87"/>
+        <location filename="../stuff/mainwindow.ui" line="87"/>
         <source>Show Settings</source>
         <translation>Muestra configuración</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="217"/>
+        <location filename="../stuff/pywhiteboard.py" line="202"/>
         <source>Hide settings</source>
         <translation>Esconde configuración</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="221"/>
+        <location filename="../stuff/pywhiteboard.py" line="206"/>
         <source>Show settings</source>
         <translation>Muestra configuración</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="175"/>
+        <location filename="../stuff/pywhiteboard.py" line="160"/>
         <source>New Profile</source>
         <translation>Nuevo perfil</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="303"/>
+        <location filename="../stuff/mainwindow.ui" line="303"/>
         <source>Delete Current Profile</source>
         <translation>Elimina el perfil activo</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="311"/>
+        <location filename="../stuff/mainwindow.ui" line="311"/>
         <source>Restart</source>
         <translation>Reinicia</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="165"/>
+        <location filename="../stuff/pywhiteboard.py" line="150"/>
         <source>default</source>
         <translation>Por defecto</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="175"/>
+        <location filename="../stuff/pywhiteboard.py" line="160"/>
         <source>Name:</source>
         <translation>Nombre:</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="445"/>
+        <location filename="../stuff/pywhiteboard.py" line="430"/>
         <source>Warning</source>
         <translation>Advertencia</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="445"/>
+        <location filename="../stuff/pywhiteboard.py" line="430"/>
         <source>Choose device</source>
         <translation>Escoge el dispositivo</translation>
     </message>
     <message>
-        <location filename="mainwindow.ui" line="316"/>
+        <location filename="../stuff/mainwindow.ui" line="316"/>
         <source>Wipe configuration</source>
         <translation>Elimina la configuración</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="207"/>
+        <location filename="../stuff/pywhiteboard.py" line="192"/>
         <source>The application will close. Please restart manually</source>
         <translation>La aplicación se cerrará. Iníciala manualmente.</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="401"/>
+        <location filename="../stuff/pywhiteboard.py" line="386"/>
         <source>Found </source>
         <translation type="unfinished">Encontrados </translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="401"/>
+        <location filename="../stuff/pywhiteboard.py" line="386"/>
         <source> Devices. Press to Choose</source>
         <translation> Dispositivos. Pulsa para escoger</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="595"/>
+        <location filename="../stuff/pywhiteboard.py" line="582"/>
         <source>Are you sure you want to exit?</source>
         <translation type="unfinished"></translation>
     </message>
@@ -565,14 +566,14 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>PBarDlg</name>
     <message>
-        <location filename="pywhiteboard.py" line="56"/>
+        <location filename="../stuff/pywhiteboard.py" line="60"/>
         <source>Cancelling...</source>
         <translation>Cancelando...</translation>
     </message>
     <message>
         <location filename="pywhiteboard.py" line="49"/>
         <source>Press 1+2 on your wiimote</source>
-        <translation>Pulsa 1+2 en el wiimote</translation>
+        <translation type="obsolete">Pulsa 1+2 en el wiimote</translation>
     </message>
     <message>
         <location filename="pywhiteboard.py" line="51"/>
@@ -580,20 +581,25 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Pulsa 1+2 en</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="60"/>
+        <location filename="../stuff/pywhiteboard.py" line="64"/>
         <source>Wait...</source>
         <translation>Espera...</translation>
     </message>
     <message>
-        <location filename="pywhiteboard.py" line="51"/>
-        <source>Press 1+2 on</source>
+        <location filename="../stuff/pywhiteboard.py" line="53"/>
+        <source>Press 1+2 on your wiimote or SYNC on your wiimote plus</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../stuff/pywhiteboard.py" line="55"/>
+        <source>Press 1+2 or SYNC on</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>app</name>
     <message>
-        <location filename="pywhiteboard.py" line="679"/>
+        <location filename="../stuff/pywhiteboard.py" line="665"/>
         <source>Application already running</source>
         <translation type="unfinished"></translation>
     </message>
